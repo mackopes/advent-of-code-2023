@@ -175,8 +175,6 @@ def parse_input():
     seeds = parse_seeds_2(lines[0])
     maps = parse_maps(lines[1:])
 
-    # print("seeds", seeds)
-    # print("maps", maps)
 
     return seeds, maps
 
@@ -188,10 +186,7 @@ def map_seed(maps: List[Map], seed: int) -> int:
 
 
 def main():
-    # import os
-    # print(os.getcwd())
     seeds, maps = parse_input()
-
     ranges = seeds
 
     for m in maps:
@@ -203,28 +198,6 @@ def main():
 
     minvalue = min(r.dest_start for r in ranges)
     print(minvalue)
-
-    # print([r.dest_start for r in ranges])
-
-
-    # for i in tqdm(range(len(values))):
-    #     values[i] = map_seed(values[i], maps)
-
-    # curr_min = map_seed(maps, values[0])
-
-    # with multiprocessing.Pool() as pool:
-    #     # v = min(tqdm(pool.imap_unordered(functools.partial(map_seed, maps), values, chunksize=100000), total=len(values)))
-    #     for v in pool.imap_unordered(
-    #         functools.partial(map_seed, maps), values, chunksize=100000
-    #     ):
-    #         if v < curr_min:
-    #             curr_min = v
-
-        # values = [m.map(x) for x in values]
-        # do the same in parallel
-
-    # print(values)
-    # print(curr_min)
 
 
 if __name__ == "__main__":
